@@ -1,10 +1,25 @@
 import './ItemCount.css'
+import React, {useState} from 'react';
 
 const ItemCount = () => {
+    const [count, setCount] = useState(1);
+    
+    const decremento = () => {
+        if(count > 0){
+            setCount(count - 1);
+        }
+        
+    }
+    const incremento = () => {
+        setCount(count + 1);
+
+    }
+
     return (
-        <div>
-            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fes.vecteezy.com%2Farte-vectorial%2F582976-icono-de-boton-mas&psig=AOvVaw3wR-PexkA-WnTe-qme9jF7&ust=1651254109651000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCOi5roant_cCFQAAAAAdAAAAABAD" alt="" />
-            <img src="" alt="" />
+        <div className="divCount">
+            <button onClick={decremento}>-</button>
+            <span>{count}</span>
+            <button onClick={incremento}>+</button>
         </div>
     )
 }
